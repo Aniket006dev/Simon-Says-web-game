@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon says Game</title>
     <link rel="stylesheet" href="simon.css">
 </head>
-<body> 
+
+<body>
     <div class="container">
         <div class="head">
             <h1>Simon Says Game</h1>
             <p class="para">Press any key to play</p>
         </div>
-        <div class="highScore"><b>Your High score: 0</b></div>
+        <div class="highScore" style="font-size: 1.5rem;"><b>Your High score: 0</b></div>
         <div class="wheel">
-            <div class="box b1" style="background-color: rgba(8, 168, 32, 0.7);"></div>
-            <div class="box b2" style="background-color: rgba(202, 180, 12, 0.797);"></div>
-            <div class="box b3" style="background-color: rgba(165, 13, 221, 0.7);"></div>
-            <div class="box b4" style="background-color: rgba(209, 0, 0, 0.7);"></div>
+            <div class="box b1" style="background-color: rgba(8, 168, 32, 0.7);" id="1"></div>
+            <div class="box b2" style="background-color: rgba(202, 180, 12, 0.797);" id="2"></div>
+            <div class="box b3" style="background-color: rgba(165, 13, 221, 0.7);" id="3"></div>
+            <div class="box b4" style="background-color: rgba(209, 0, 0, 0.7);" id="4"></div>
         </div>
+        <div class="misc">
+            <button type="button" class="instbtn miscbtn">Instructions</button>
+            <div class="instructions" style="display: none;">
+                <h2>🧠 Simon Says - How to Play</h2>
+                <ul>
+                    <li>🔊 <strong>Start Game:</strong> Press any key to begin the game.</li>
+                    <li>✨ <strong>Watch Closely:</strong> A box will blink indicating the color in the sequence.</li>
+                    <li>👆 <strong>Click:</strong> Repeat the sequence by clicking the boxes in the same order.</li>
+                    <li>❌ <strong>Wrong Move:</strong> If you click the wrong box, the game will end.</li>
+                    <li>🚀 <strong>Level Up:</strong> A new color is added to the sequence with each correct round.</li>
+                    <li>🔁 <strong>Restart:</strong> Press any key again to restart after a wrong move.</li>
+                </ul>
+            </div>
+            <button type="button" class="hintbtn miscbtn">Hint</button>
+            <div class="hintdiv" style="display: none;"><b>You have to enter in sequence</b></div>
+
+        </div>
+
     </div>
     <script src="simon.js"></script>
 </body>
+
 </html>

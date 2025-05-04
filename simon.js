@@ -9,7 +9,7 @@ function upgrade(){
     level.innerText=`level ${lev}`;
     let ran=Math.floor(Math.random()*4);
     let getEl=document.querySelector(`.b${ran+1}`);
-    let s=getEl.classList[1];
+    let s=getEl.getAttribute("id");
     gSeq.push(s);
     blink(getEl);
 }
@@ -46,7 +46,7 @@ let btnPrs =function(){
     let btn=this;
     btn.classList.add("press")
     setTimeout(()=>btn.classList.remove("press"),150)
-    uSeq.push(this.classList[1]);
+    uSeq.push(this.getAttribute("id"));
     match(uSeq.length-1);
 }
 addEventListener("keypress",()=>{
@@ -56,4 +56,33 @@ addEventListener("keypress",()=>{
         btns.forEach((e)=>(e.addEventListener("click",btnPrs)));
         start=true;
     }
+})
+let instbtn=document.querySelector(".instbtn");
+let inst=document.querySelector(".instructions")
+let hintbtn=document.querySelector(".hintbtn");
+let flag
+let flag2;
+instbtn.addEventListener("click",()=>{
+        flag=inst.classList.toggle("inst");
+        if(flag2){
+            flag2=hintdiv.classList.toggle("hint");
+        }
+})
+let hint=gSeq;
+let hintdiv=document.querySelector(".hintdiv");
+hintbtn.addEventListener("click",()=>{
+    flag2=hintdiv.classList.toggle("hint")
+    if(start==false){
+        hintdiv.innerHTML="<b>Press any key to start</b>";
+    }
+    else{
+        hintdiv.innerHTML=`<b>You have to enter in sequence : ${hint}`;
+    }
+    setTimeout(()=>{
+        flag2=hintdiv.classList.remove("hint")
+    },1500)
+    if(flag){
+        flag=inst.classList.toggle("inst");
+    }
+
 })
