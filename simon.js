@@ -80,7 +80,7 @@ hintbtn.addEventListener("click",()=>{
     }
     setTimeout(()=>{
         flag2=hintdiv.classList.remove("hint")
-    },1500)
+    },3000)
     if(flag){
         flag=inst.classList.toggle("inst");
     }
